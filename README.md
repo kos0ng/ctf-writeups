@@ -3,6 +3,7 @@
 <h3>List CTF Event</h3>
 - Asis Quals 2020<br>
 - Defcon 911 2020<br>
+- FirstCTF 2020 ( playing as Mbuh ) <a href="https://medium.com/@ret2ex/write-up-first-challenge-2020-2e2ff284d590">RE Writeup</a> <br>
 - Redpwn 2020<br>
 - Batpwn 2020<br>
 - Castors CTF 2020 ( playing as XxS6907 ) <a href="https://medium.com/@ret2ex/reverse-engineering-castors-ctf-2020-b80ce7a4670">RE Writeup</a><br> 
