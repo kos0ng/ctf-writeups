@@ -1,4 +1,4 @@
-#Redd's Art ( Reverse Engineering ) Writeup
+# Redd's Art ( Reverse Engineering ) Writeup
 
 At first i tried to run the binary and the output seems like conversation which asked for input several times. If we send `no` as input for 2 times ( after sending name ) the output will be string like flag but it just a fake flag ( uiuctf{v3Ry_r341_@rTT} ). 
 
