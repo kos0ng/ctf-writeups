@@ -4,6 +4,17 @@
 - <a href="http://gist.github.com/ret2ex">gist</a> <br>
 
 <h3>List CTF Event</h3>
+- BtSCTF 2021<br>
+- CodefestCTF 2021<br>
+- PicoCTF 2021<br>
+- FoobarCTF 2021<br>
+- angstromCTF 2021<br>
+- BSides Canberra CTF 2021<br>
+- RitsecCTF 2021<br>
+- DVCTF 2021<br>
+- vishwaCTF 2021<br>
+- DarkConCTF 2021 <a href="https://ret2ex.medium.com/reverse-engineering-darkcon-ctf-2021-a8060717b1e3">RE Writeup</a> <br>
+- BSidesDelhi CTF 2020 <a href="https://ret2ex.medium.com/writeup-reverse-engineering-bsides-delhi-ctf-2020-8a3f8bc92fb">RE Writeup</a> <br>
 - UIUCTF 2020<br>
 - Asis Quals 2020<br>
 - Defcon 911 2020<br>
