@@ -1,0 +1,43 @@
+0x555555555690 (
+   $rdi = 0x00007fffffffd860 → 0x0000000000000000,
+   $rsi = 0x0000000000000041,
+   $rdx = 0x00007fffffffd85c → 0x0000000000000000
+)
+
+
+gef➤  x/2x $rdx-0x1d0
+0x7fffffffd6fd:	0x20202020	0x20202020
+
+
+a1+4
+M = (a1+4) + 43
+m = (a1+4) + 1
+
+
+a1 = v7 % 28; i
+(a1 + 4) = v8 % 44 m
+(a1 + 8) = v6 % 56 o
+
+cek
+*(_BYTE *)(a1 + 15) = v18 = a1+0x12
+a1+15 == a+13 -> a1+16 = 0
+
+18 - a1+4 == 11,a1 == 22
+16 - a1+8 == 13, a1+4 == 37 , a1 == 6, a1+13 == 0 , a1+15==0 -> a1+14=0 else a1+14=1
+15 - a1+13 == 0, a1+8 == 7,a1+15 == 0 , a1+18 == 0,a1+4 ==8 ,a1 == 9 , a1+16 == 1
+17 - !,v2!=7,v2!=13 -> a1+16 = 0 -> a1+15 == 1 , a1+18 >= 1 , a1+16 == 0
+14 - a1+4,a1+8 != 0 
+
+IIIIIImmmmmmmmmmmooooooo -> 22,11,7
+iiiiiiiiiiiiMMMMMMMMMMMMMMMMMMoooooo 6,37,13
+!OOOOOOmmmmmmmmmmmmmmmiii!
+!
+
+IIIIIImmmmmmmmmmmoooooooiiiiiiiiiiiiMMMMMMMMMMMMMMMMMMoooooo!OOOOOOmmmmmmmmmmmmmmmiii!!!IIIMMMMMMMMMMMMMMMoooooo
+mmmmmmmOOOOOOOOOOOOOIIIIII
+
+16 - ooooooooooooo , MMMMMMM , iiiiii 
+15 - OOOOOO , mmmmmmmmmmmmmmm , iii
+18 - !mmm , iiiiiiiiiiiii
+
+0x5555555555cf

@@ -1,0 +1,22 @@
+0x555555555508 // don't know what is rax value
+
+0x000055555555529d // get urandom value
+0x0000555555555311 // get key
+
+0xd value known ( urandom )
+
+xor value known ( static value )
+
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00005555555553ef 
+5       breakpoint     keep y   0x0000555555555575 
+6       breakpoint     keep y   0x00005555555555a5 
+7       breakpoint     keep y   0x0000555555555627
+
+#al value from us
+
+rbp-0x380354 = counter
+0x7fffffffde10
+
+send %
+output from first is bd5 argument

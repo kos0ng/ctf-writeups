@@ -1,0 +1,9 @@
+key = [81, 87, 69, 82, 84, 89, 85, 73, 79, 80, 65, 83, 68, 70, 71, 72, 74, 75]
+buf = [0x160, 0x6c, 0x100, 0x54, 0x2f0, 0xa0, 0x670, 0x1e0, 0x7b0, 0xcc, 0x250, 0x194, 0x700, 0x1c8, 0x240, 0xa8, 0x7b0, 0xd8]
+flag = ""
+for i in range(len(buf)):
+	if(i%2==1):
+		flag+=chr((buf[i]//4)^key[i])
+	else:
+		flag+=chr((buf[i]//16)^key[i])
+print(flag)
