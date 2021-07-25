@@ -2,7 +2,7 @@
 Quick overview about my approach to solve RE challenges in IJCTF 2021
 ## Sanity - 100 pts
 - Breakpoint on address that call strcmp function
-- See argument on that strcmp function , one of that must be a flag
+- See argument on that strcmp function , one of them must be a flag
 ## Hello World - 738 pts
 - There are encrypted section of assembly ( part of x and y function )
 - Breakpoint on hardware access to our input
