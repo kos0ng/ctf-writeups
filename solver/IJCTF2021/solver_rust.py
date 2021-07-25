@@ -10,16 +10,16 @@ for x in bf:
 	arr = x[::-1]
 	final = init[:]
 	for k in arr:
-		order = k[1]
-		mapp = k[0]
-		start = mapp.index(max_index)
+		mapp = k[1]
+		order = k[0]
+		start = order.index(max_index)
 		for i in range(len(final)):
-			plain[order[i]] = final[i]
+			plain[mapp[i]] = final[i]
 		plain2[-1] = plain[-1]
 		for i in range(start-1,-1,-1):
-			plain2[mapp[i]] = plain[i]^plain2[mapp[i+1]]
+			plain2[order[i]] = plain[i]^plain2[order[i+1]]
 		for i in range(start+1,len(final)):
-			plain2[mapp[i]] = plain[i-1]^plain2[mapp[i-1]]
+			plain2[order[i]] = plain[i-1]^plain2[order[i-1]]
 		final = plain2
 	res = ''.join(map(chr,final))
 	if('IJCTF' in res):
