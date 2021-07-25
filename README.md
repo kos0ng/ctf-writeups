@@ -4,6 +4,7 @@
 - <a href="http://gist.github.com/ret2ex">gist</a> <br>
 
 <h3>List CTF Event</h3>
+- IJCTF 2021<br>
 - BtSCTF 2021<br>
 - CodefestCTF 2021<br>
 - PicoCTF 2021<br>
