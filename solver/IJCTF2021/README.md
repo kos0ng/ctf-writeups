@@ -13,7 +13,7 @@ Quick overview about my approach to solve RE challenges in IJCTF 2021
 - This chall is about playing with ptrace
 - Int 3 called to trigger ptrace
 - Executed instruction ( in function 0x8049248 ) is based on that value filled before ptrace called ( eax - function 0x804948F ) , also with another value such as input per byte that passed to instruction in function 0x804948F
-- So determine order of instructions and what it measn by analyze function 0x8049248 and 0x804948F
+- So determine order of instructions and what it means by analyze function 0x8049248 and 0x804948F
 - Final solver : [solver_family.py](IJCTF2021/solver_family.py)
 ## Time - 988 pts
 - Find comparison value in function 0x140B
@@ -26,10 +26,10 @@ if ( v0 != sub_1257(v1, 67LL, 899LL) )
 - Data on 0x4080 and 0x41a0 passed to function on 0x2008,0x2028,0x2040,and 0x2062
 - 0x42C0 hold list of instruction consisting of 0x2008,0x2028,0x2040,and 0x2062 function
 - 0x43E0 hold list of instruction consisting of 0x2008,0x2028,0x2040,and 0x2062 function
-- List of instruction in 0x42C0 used to generate value that used to compare the value of comparison with argument from address 0x4080
+- List of instruction in 0x42C0 with argument from address 0x4080 used to generate value that will be compared with the value of comparison
 - List of instruction in 0x43E0 used to generate flag with argument from 0x41a0
 - The value on 0x4080 and 0x41a0 are shuffled ( random ) but paired , 0x4080 + x swap with 0x4080 + y , so 0x41a0 + x will be swapped with 0x41a0 + y too
-- The value on 0x42C0 and 0x43e0 are shuffled ( random ) but paired , 0x4080 + x swap with 0x4080 + y , so 0x41a0 + x will be swapped with 0x41a0 + y too
+- The value on 0x42C0 and 0x43e0 are shuffled ( random ) but paired , 0x42c0 + x swap with 0x42c0 + y , so 0x43e0 + x will be swapped with 0x43e0 + y too
 - All of list instruction in 0x42C0 and 0x43E0 have the same value for its argument ( paired )
 - So we can solve this by determining the order of instruction in 0x43E0 based on 0x42C0
 - Final solver : [solver_time.py](IJCTF2021/solver_time.py)
