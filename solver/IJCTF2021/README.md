@@ -8,13 +8,13 @@ Quick overview about my approach to solve RE challenges in IJCTF 2021
 - Breakpoint on hardware access to our input
 - Analyze the x and y ( after decrypted )
 - each two bytes has a mapped value , so by generating the mapped value ( ciphertext ) and the original value ( plaintext ) we can solve this chall
-- Final solver : [solver_hello.py](IJCTF2021/solver_hello.py)
+- Final solver : [solver_hello.py](solver_hello.py)
 ## Family - 940 pts
 - This chall is about playing with ptrace
 - Int 3 called to trigger ptrace
 - Executed instruction ( in function 0x8049248 ) is based on that value filled before ptrace called ( eax - function 0x804948F ) , also with another value such as input per byte that passed to instruction in function 0x804948F
 - So determine order of instructions and what it means by analyze function 0x8049248 and 0x804948F
-- Final solver : [solver_family.py](IJCTF2021/solver_family.py)
+- Final solver : [solver_family.py](solver_family.py)
 ## Time - 988 pts
 - Find comparison value in function 0x140B
 ```
@@ -32,7 +32,7 @@ if ( v0 != sub_1257(v1, 67LL, 899LL) )
 - The value on 0x42C0 and 0x43e0 are shuffled ( random ) but paired , 0x42c0 + x swap with 0x42c0 + y , so 0x43e0 + x will be swapped with 0x43e0 + y too
 - All of list instruction in 0x42C0 and 0x43E0 have the same value for its argument ( paired )
 - So we can solve this by determining the order of instruction in 0x43E0 based on 0x42C0
-- Final solver : [solver_time.py](IJCTF2021/solver_time.py)
+- Final solver : [solver_time.py](solver_time.py)
 ## Derusting - 999 pts
 - Created using rust 
 - Our input length will be padded to even length , so there is null byte added at the end if our input length is odd
@@ -59,5 +59,5 @@ if ( v0 != sub_1257(v1, 67LL, 899LL) )
  flag[5] -> flag[0] -> flag[4] -> flag[1] -> flag[2] -> flag[3]
  ```
  - The process of mapping and xoring with a shuffled index is n times , where n is the length of our input
- - There is another script that i used to dump the map and order value ( [helper_rust.py](IJCTF2021/helper_rust.py) )
- - Final solver : [solver_rust.py](IJCTF2021/solver_rust.py)
+ - There is another script that i used to dump the map and order value ( [helper_rust.py](helper_rust.py) )
+ - Final solver : [solver_rust.py](solver_rust.py)
