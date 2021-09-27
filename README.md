@@ -1,7 +1,7 @@
 <h2 align="center">My CTF Writeup Repository</h2>
 
 <h3>Some of my solver during CTF event</h3>
-- <a href="http://gist.github.com/ret2ex">gist</a> <br>
+- <a href="http://gist.github.com/kos0ng">gist</a> <br>
 
 <h3>List CTF Event</h3>
 - IJCTF 2021<br>
