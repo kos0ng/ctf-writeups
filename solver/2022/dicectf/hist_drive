@@ -1,0 +1,396 @@
+gef➤  i b
+Num     Type           Disp Enb Address            What
+1       breakpoint     keep y   0x00007ffff7f9cf97 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+2       breakpoint     keep y   0x00007ffff7f9d226 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+3       breakpoint     keep y   0x00007ffff7f9d37b library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+4       breakpoint     keep y   0x00007ffff7f9d990 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+
+
+read input = 000000000009F92
+init v4 = 0x40
+v10 = v3[43]; -> 0x10000 = 0x1000
+v3[43] = v10 - 256; -> 0xff00
+
+
+input
+0x7ffff7fff120
+0x7ffff8001180
+
+let mut rng = rand::thread_rng();
+
+memcpy . copy input to address
+0x7ffff8001180 (r15)
+0x7ffff8001380 (rax)
+
+opcode 0x10
+v1 = inp[i+1]
+v2 = inp[i+2]
+if(v1>=4):
+    error
+else: (label 20)
+#   BYTE PTR [r12+rbp*1+0x8] = v2
+    *((_BYTE *)a1 + v1 + 8) = v2;
+
+opcode 0x20
+v1 = inp[i+1] -> 0,1,2,3
+v2 = inp[i+2] -> 0,1,2,3
+if(v2>=4):
+    error
+a1[7] = 4
+if(a1[7]<=v1):
+    error
+inp[5] = 0x7ffff80013a0
+*(0x7ffff80013a0 + 0x20 + 0x8) = 0x00007ffff7ff9e58 (drive :: device) -> function (decide by v1)
+v1 = 0 -> device..Reader$u20$as$u20$drive..device..Device$GT$9send_byte
+v1 = 1 -> drive..device..Writer$u20$as$u20$drive..device..Device$GT$::send_byte
+v1 = 2 -> device..Arithmetic$u20$as$u20$drive..device..Device$GT$::send_byte
+v1 = 3 -> drive..device..Tape$u20$as$u20$drive..device..Device$GT$::send_byte
+
+(a1[5] + 16LL * v1) = arg1 -> address to write
+((unsigned __int8 *)a1 + v2 + 8)) = arg2 -> value to write
+
+opcode 0x21
+v1 = inp[i+1]
+v2 = inp[i+2]
+v1 < 4
+v2 < 4
+a1[5] = 0x00007ffff7ff9e58 -> function (decide by v2)
+(a1[5] + 16 * v2 + 8) + 24LL))(*(_QWORD *)(a1[5] + 16 * v2))
+v2 = 0 -> drive..device..Reader$u20$as$u20$drive..device..Device$GT$8get_byte
+v2 = 1 -> drive..device..Writer$u20$as$u20$drive..device..Device$GT$8get_byte
+v2 = 2 -> drive..device..Arithmetic$u20$as$u20$drive..device..Device$GT$8get_byte
+v2 = 3 -> drive..device..Tape$u20$as$u20$drive..device..Device$GT$8get_byte
+(a1[5] + 16 * v2) = arg1 -> address to get
+
+*((_BYTE *)a1 + v1 + 8) -> return function
+
+opcode 0
+i++
+
+opcode 1-31
+v1 = inp[i+1]
+rust_dealloc (rdi -> null byte)
+
+opcode default (0x50)
+v1 = inp[i+1]
+v2 = inp[i+2]
+if(v2 >=4):
+    error
+if(v1 >=4):
+    error
+v17 = *((_BYTE *)a1 + v1 + 8)
+v19 = *((_BYTE *)a1 + v2 + 8);
+if ( v17 < v19 )
+ *a1 = v12
+
+
+opcode default (0x51)
+v1 = inp[i+1]
+v2 = inp[i+2]
+if(v1 > 3):
+    error
+if(v2 >=4):
+    error
+v9 = *((_BYTE *)a1 + v1 + 8);
+v11 = *((_BYTE *)a1 + v2 + 8);
+v12 = inp[i:i+4]
+if(v9 <= v11):
+    *a1 = v12;
+
+
+opcode else
+v4 = inp[i+1] -> v4 == return value (not important)
+
+0x7ffff80013a0 -> rax
+
+0x7ffff8001380
+
+gef➤  x/gx 0x7ffff80014a0 -> counter
+0x7ffff80014a0: 0x0000000000000001
+gef➤  x/gx 0x7ffff80014a8
+0x7ffff80014a8: 0x0000000000000012
+
+
+0x7fffffffdc68 -> value
+
+
+0x7fffffffdbc8
+
+
+gef➤  i b
+Num     Type           Disp Enb Address            What
+5       breakpoint     keep y   0x00007ffff7f9d990 library/std/src/panicking.rs:525
+    breakpoint already hit 10 times
+6       breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+    breakpoint already hit 4 times
+7       breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+8       breakpoint     keep y   0x00007ffff7f9d3b9 library/std/src/panicking.rs:525
+9       breakpoint     keep y   0x00007ffff7f9d38f library/std/src/panicking.rs:525
+10      breakpoint     keep y   0x00007ffff7f9db3a library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+12      breakpoint     keep y   0x00007ffff7f9da21 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+13      breakpoint     keep y   0x00007ffff7f9dbb0 library/std/src/panicking.rs:525
+    breakpoint already hit 4 times
+17      breakpoint     keep y   0x00007ffff7f9db5f library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+gef➤  
+
+
+*(a1[5] + 16LL * v13) = 0x7ffff80014a0
+*(0x7ffff8001410) = 0x7ffff80014a0
+(a1 + 16LL * v13) 
+
+*(a1+32)
+
+
+gef➤  x/11gx 0x7fffffffdc68 (a1)
+0x7fffffffdc68: 0x0000000000000006  0x00000000000000ef
+0x7fffffffdc78: 0x00007ffff80013a0  0x0000000000000014
+0x7fffffffdc88: 0x0000000000000014  0x00007ffff80013e0 a1[5]
+0x7fffffffdc98: 0x0000000000000004  0x0000000000000004
+0x7fffffffdca8: 0x00007ffff8001180  0x0000000000000014
+0x7fffffffdcb8: 0x00007ffff80013a0  0x00007ffff8001180
+0x7fffffffdcc8: 0x0000000000000020  0x0000000000000014
+0x7fffffffdcd8: 0x00007fffffffdd60  0x00007fffffffdda8
+
+0x7fffffffdc28: 0x0000000a72bcf960      0x00007ffff8001380
+0x7fffffffdc38: 0x0000000000000004      0x0000000000000004
+0x7fffffffdc48: 0x0000000000000000      0x0000000000000000
+0x7fffffffdc58: 0x0000000000000000      0x0000000072bcf960
+0x7fffffffdc68: 0x0000000000000006(a1)  0x00000000000000ef
+0x7fffffffdc78: 0x00007ffff80013a0      0x0000000000000014
+0x7fffffffdc88: 0x0000000000000014      0x00007ffff80013e0 a1[5]
+0x7fffffffdc98: 0x0000000000000004      0x0000000000000004
+
+
+*a1 = output
+
+target = 0x7ffff8001380 == *(a1-7)
+0x4 -> 0x7fffffffdc40 == *(a1-5)
+
+0 -> 0x7ffff8001400:    0x00007fffffffdc58 -> 0x0000000000000000    
+1 -> 0x7ffff8001460:    0x00007fffffffdc30 -> 0x00007ffff8001380 (v35) from 0x7ffff80013f0?
+2 -> 0x7ffff8001480:    0x0000000000000000 from 0x7ffff8001400 ?
+3 -> 0x7ffff8001460:    0x0000000000000000
+
+0x7ffff7f9da88 -> writer
+
+ *((_BYTE *)a1 + v6 + 8) = v7;
+(_BYTE *)a1 + v6 + 8 = 0x7fffffffdc70
+
+tape
+0x7ffff8001460 (counter)
+0x7ffff8001468 (value) -> 0x000000000000beef
+
+ecx = 0xa7d4c7cc 
+eax = 0x6
+0x2a6333cc
+0xcc06ccce
+
+Num     Type           Disp Enb Address            What
+5       breakpoint     keep y   0x00007ffff7f9d990 library/std/src/panicking.rs:525
+    breakpoint already hit 9 times
+6       breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+    breakpoint already hit 4 times
+7       breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+8       breakpoint     keep y   0x00007ffff7f9d3b9 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+9       breakpoint     keep y   0x00007ffff7f9d38f library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+10      breakpoint     keep y   0x00007ffff7f9db3a library/std/src/panicking.rs:525
+12      breakpoint     keep y   0x00007ffff7f9da21 library/std/src/panicking.rs:525
+13      breakpoint     keep y   0x00007ffff7f9dbb0 library/std/src/panicking.rs:525
+    breakpoint already hit 4 times
+17      breakpoint     keep y   0x00007ffff7f9db5f library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+18      breakpoint     keep y   0x00007ffff7f9de1e library/std/src/panicking.rs:525
+19      breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+    breakpoint already hit 4 times
+21      breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+
+v4 >= 0x40 -> v4 = 0x40
+first
+v9 = rand::rngs::adapter::reseeding::fork::get_fork_counter::h5e5e490451bcc392(); -> 0
+
+0x7ffff8001320: 0x955009b8d6aa0705
+
+0xbf33544222ac7d45
+
+x/gx 0x7ffff8001320
+
+gef➤  x/10gx 0x7ffff8001320
+0x7ffff8001320: 0x9c88314ecbe8d89a  0xc65940db1197b22e
+0x7ffff8001330: 0xf4a74e0b413ecaa4  0xdee80d874d9182b7
+0x7fffffffdb08 - 0x7fffffffdb28  →   "\xfd\x6e\x10\x33\x3a\x72\x99\xe8[...]" 
+0x7fffffffdbb0 - 0x7fffffffdbd0  →   "\xfd\x6e\x10\x33\x3a\x72\x99\xe8[...]" 
+
+
+0x7ffff8001300: 0x68d828584a84fd16  0xeeca9767506b5bec
+0x7ffff8001310: 0x21a5bfed2f078df6  0x54e1bc82262fc852
+0x7ffff8001320: 0x0000000000000000  0x0000000000000000
+0x7ffff8001330: 0x0000000000010000  0x0000000000010000
+
+gef➤  p $rsi
+$11 = 0x6
+gef➤  p $rcx
+$12 = 0xff00
+gef➤  x/4gx $rdi
+0x7ffff8001300: 0x68d828584a84fd16  0xeeca9767506b5bec
+0x7ffff8001310: 0x21a5bfed2f078df6  0x54e1bc82262fc852
+
+rand_chacha::guts::refill_wide::h5ebc69fc91d01e99(v3 + 36, 6LL, v5); -> return 0x4 -> write on v5 (0x7ffff80011f8)
+
+0x7ffff80011f8: 0xa21b82d7fd974cdb  0x9e103636bfaa0ff4
+0x7ffff8001208: 0x67e54718b7308efe  0xe521ff1f2abdbc4c
+0x7ffff8001218: 0xbed0390873f3da80  0xfffadca75ffa73b3
+0x7ffff8001228: 0x254e0de309e9aefe  0x7740e84bee15b826
+0x7ffff8001238: 0x01ca7d991cb80434  0xf19c8f72ac48acb3
+0x7ffff8001248: 0x6ed0a2f9cdf891c1  0x55374f8c48808ac3
+0x7ffff8001258: 0xf452853fca61e3c6  0xce4d212a8e4eb6f3
+0x7ffff8001268: 0xa000d2d3bd5adea1  0xee6539c4cd715814
+0x7ffff8001278: 0x7b956fccb02bb1c9  0x9c96fd07bbeecf7f
+0x7ffff8001288: 0x90d1d60aae21c11f  0x4c3d68c904407f3c
+0x7ffff8001298: 0x3839d923fc133fea  0x47c2fec2c693f30f
+0x7ffff80012a8: 0x12fc8e4bb144b6fa  0xa70dcc58be289999
+0x7ffff80012b8: 0x4ec8a614f6693f84  0xaf19afa26c637ddb
+0x7ffff80012c8: 0xe4e130f40b65e5b8  0xb2f8bf7b96ed3840
+0x7ffff80012d8: 0x97966450bde5be7b  0x74c295f5f13bef0c
+0x7ffff80012e8: 0xf46b930657ff8593  0x9ebdc149342a7371
+0x7ffff80012f8: 0x00007fffffffdb40  0x979c8f5f732c9144
+0x7ffff8001308: 0xd037ff45449c6319  0xc70d464bc790e574
+0x7ffff8001318: 0x47e3ff8041e4be6f  0x0000000000000004
+0x7ffff8001328: 0x0000000000000000  0x0000000000010000
+
+
+v12 = *(_DWORD *)&v5[4 * v11]; 0x7ffff80011fc 4 bytes 0xa21b82d7 -> v5[1]
+v13 = *((_DWORD *)v3 + v17 + 6); 0x7ffff8001200 4 bytes 0xbfaa0ff4 -> v5[2]
+v18 = *((_DWORD *)v3 + v14 + 6); 0x7ffff8001204 0x9e103636
+
+
+0x7ffff8001300: 0xbcba7c94e4ecbb9f  0xf8d35f8802d587a8
+0x7ffff8001310: 0xf6c027d6d5e2817a  0x0da7167004c7ba58
+0x7ffff8001320: 0x0000000000000000  0x0000000000000000
+0x7ffff8001330: 0x0000000000010000  0x000000000000ff00
+
+Num     Type           Disp Enb Address            What
+5       breakpoint     keep y   0x00007ffff7f9d990 library/std/src/panicking.rs:525
+    breakpoint already hit 3 times
+6       breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+7       breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 2 times
+8       breakpoint     keep y   0x00007ffff7f9d3b9 library/std/src/panicking.rs:525
+9       breakpoint     keep y   0x00007ffff7f9d38f library/std/src/panicking.rs:525
+10      breakpoint     keep y   0x00007ffff7f9db3a library/std/src/panicking.rs:525
+12      breakpoint     keep y   0x00007ffff7f9da21 library/std/src/panicking.rs:525
+13      breakpoint     keep y   0x00007ffff7f9dbb0 library/std/src/panicking.rs:525
+17      breakpoint     keep y   0x00007ffff7f9db5f library/std/src/panicking.rs:525
+18      breakpoint     keep y   0x00007ffff7f9de1e library/std/src/panicking.rs:525
+19      breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+21      breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 2 times
+22      breakpoint     keep y   0x00007ffff7f9dd5a library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+
+x/gx 0x7fffffffdc70
+
+0x6d54bb43
+
+x/gx 0x7fffffffdc28
+
+5       breakpoint     keep y   0x00007ffff7f9d990 library/std/src/panicking.rs:525
+    breakpoint already hit 8 times
+6       breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+    breakpoint already hit 3 times
+7       breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 4 times
+8       breakpoint     keep y   0x00007ffff7f9d3b9 library/std/src/panicking.rs:525
+9       breakpoint     keep y   0x00007ffff7f9d38f library/std/src/panicking.rs:525
+10      breakpoint     keep y   0x00007ffff7f9db3a library/std/src/panicking.rs:525
+12      breakpoint     keep y   0x00007ffff7f9da21 library/std/src/panicking.rs:525
+13      breakpoint     keep y   0x00007ffff7f9dbb0 library/std/src/panicking.rs:525
+17      breakpoint     keep y   0x00007ffff7f9db5f library/std/src/panicking.rs:525
+18      breakpoint     keep y   0x00007ffff7f9de1e library/std/src/panicking.rs:525
+19      breakpoint     keep y   0x00007ffff7f9da88 library/std/src/panicking.rs:525
+    breakpoint already hit 3 times
+23      breakpoint     keep y   0x00007ffff7f9d665 library/std/src/panicking.rs:525
+gef➤  
+
+
+Num     Type           Disp Enb Address            What
+24      breakpoint     keep y   0x00007ffff7f9dad4 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+25      breakpoint     keep y   0x00007ffff7f9de1e library/std/src/panicking.rs:525
+26      breakpoint     keep y   0x00007ffff7f9dae1 library/std/src/panicking.rs:525
+
+x/gx 0x7fffffffdc28
+x/gx 0x7fffffffdc70
+
+Num     Type           Disp Enb Address            What
+27      breakpoint     keep y   0x00007ffff7f9dae1 library/std/src/panicking.rs:525
+    breakpoint already hit 2 times
+28      breakpoint     keep y   0x00007ffff7f9da21 library/std/src/panicking.rs:525
+    breakpoint already hit 1 time
+
+
+
+Num     Type           Disp Enb Address            What
+29      breakpoint     keep y   0x00007ffff7f9de54 library/std/src/panicking.rs:525
+32      breakpoint     keep y   0x00007ffff7f9ddd9 library/std/src/panicking.rs:525
+    breakpoint already hit 61 times
+
+Num     Type           Disp Enb Address            What
+33      breakpoint     keep y   0x00007ffff7f9d3b9 library/std/src/panicking.rs:525
+    breakpoint already hit 5 times
+34      breakpoint     keep y   0x00007ffff7f9df31 library/std/src/panicking.rs:525
+    breakpoint already hit 498 times
+
+stack [v1,v2,v3,v4,v1,v2,v3,v4,v1,v2,v3]
+
+v1 = v1
+v4 = 1
+v1 = v1 + 1
+
+v3 = v4
+v3 = v3
+v2 = v2
+v4 = v1
+
+v3 = v2*v3
+v3 = v3 + v4
+v4 = v4
+v3 %= v4
+
+v1 = v1 + 1
+
+
+v1 = counter
+v2 = v2
+v3 = v3
+v4 = v4
+
+v1 = 0
+v4 = 1
+v1 = v1 + v4
+
+v3 = v3
+v2 = v2
+v3 = v3 * v2
+
+v4 = v1
+v3 = v3 + v4
+
+v4 = v4
+v3 = v3%v4
+
+v1 = 1
+v4 = 1
+v1 = v1 + 1
+
