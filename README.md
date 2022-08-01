@@ -5,6 +5,8 @@
 
 ## List CTF Writeup
 ### 2022
+- final oscctf
+- uactf
 - aractf 
 - dicectf
 - findit
