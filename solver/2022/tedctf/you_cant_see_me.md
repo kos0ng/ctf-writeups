@@ -2,11 +2,13 @@
 
 Given access to Strapi dashboard
 
-![[Pasted image 20221110122039.png]]
+
+![img](https://raw.githubusercontent.com/kos0ng/ctf-writeups/master/solver/2022/tedctf/Pasted%20image%2020221110122039.png)
+
 
 We try to check each data on dashboard and there is "User" tab in dashoard. Take a look on one of the user we can see that there is suspicous column which is "Flag"
 
-![[Pasted image 20221110122327.png]]
+![img](https://raw.githubusercontent.com/kos0ng/ctf-writeups/master/solver/2022/tedctf/Pasted%20image%2020221110122327.png)
 
 Flag is hidden, given user can't view the hidden data. By using [CVE-2022-31367](https://github.com/kos0ng/CVEs/tree/main/CVE-2022-31367) unauthorized user can abuse the filter feature to get the value of the Flag. Here is the solver to get the flag.
 ```python
@@ -49,8 +51,9 @@ print("Email : " + email)
 print("Flag : " + leak_flag)
 ```
 
-![[Pasted image 20221110123525.png]]
-![[Pasted image 20221110123727.png]]
+![img](https://raw.githubusercontent.com/kos0ng/ctf-writeups/master/solver/2022/tedctf/Pasted%20image%2020221110123525.png)
+![img](https://raw.githubusercontent.com/kos0ng/ctf-writeups/master/solver/2022/tedctf/Pasted%20image%2020221110123727.png)
+
 After that just change the format to flag format and got the flag
 
 **Flag  : CTFTED2022{cve-2022-31367-should_be_easy_for_you}**
