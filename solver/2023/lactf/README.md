@@ -11,3 +11,4 @@
 | RE | [switcheroo](re/switcheroo/)
 | RE | [snek](re/snek/)
 | Web | [85_reasons_why](web/85_reasons_why/)
+| Web | [uuid-hell](web/uuid-hell/)
