@@ -1,6 +1,6 @@
 | Category | Challenge
 | --- | --- |
-| Crypto | [chinese-lazy-theorem-1](lactf/crypto/chinese-lazy-theorem-1/)
+| Crypto | [chinese-lazy-theorem-1](crypto/chinese-lazy-theorem-1/)
 | Crypto | [chinese-lazy-theorem-2](/lactf/crypto/chinese-lazy-theorem-2/)
 | Crypto | [guess-the-bit](/lactf/crypto/guess-the-bit/)
 | Crypto | [one-more-time-pad](/lactf/crypto/one-more-time-pad/)
