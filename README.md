@@ -5,6 +5,8 @@
 
 ## List CTF Writeup
 ### 2023
+- lactf
+- bi0sctf
 - irisctf
 ### 2022
 - nitectf (partial solution)
