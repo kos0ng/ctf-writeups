@@ -12,7 +12,7 @@
 - There is a binary that can convert wat to wasm, so using this approach we try to patch some instruction so we can compiel the wat to wasm and decompile it using ghidra plugin/wasm2c/wasm-decompile
 ![img](images/Pasted%20image%2020230220124440.png)
 - There are some instruction that can't be converted , so my approach is trying to replacing the instruction and then compile again
-- here is the patched [main.wat] (./main.wat)
+- here is the patched [main.wat](main.wat)
 ![img](images/Pasted%20image%2020230220124710.png)
 - After that just open it on ghidra , here is the example of opening checkFlag function on ghidra
 ![img](images/Pasted%20image%2020230220125120.png)
