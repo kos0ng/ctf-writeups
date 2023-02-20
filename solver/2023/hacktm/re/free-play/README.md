@@ -6,21 +6,21 @@
 # PoC
 
 - At initial, we try to decompile using ghidra plugin but it fail, also we can't do decompile and converting to wat using wasm2c and wasm2wat
-![[Pasted image 20230220124348.png]]
+![img](images/Pasted%20image%2020230220124348.png)
 - We found the solution , we set --enable-threads to convert the file to wat
-![[Pasted image 20230220124227.png]]
+![img](images/Pasted%20image%2020230220124227.png)
 - There is a binary that can convert wat to wasm, so using this approach we try to patch some instruction so we can compiel the wat to wasm and decompile it using ghidra plugin/wasm2c/wasm-decompile
-![[Pasted image 20230220124440.png]]
+![img](images/Pasted%20image%2020230220124440.png)
 - There are some instruction that can't be converted , so my approach is trying to replacing the instruction and then compile again
 - here is the patched [main.wat] (./main.wat)
-- ![[Pasted image 20230220124710.png]]
+![img](images/Pasted%20image%2020230220124710.png)
 - After that just open it on ghidra , here is the example of opening checkFlag function on ghidra
-![[Pasted image 20230220125120.png]]
+![img](images/Pasted%20image%2020230220125120.png)
 - During the competition we use `chrome` to do dynamic analysis , such as inspecting the value on memory, stack , and register value.
 - Here is an example when we try to inspecting the value on stack/argument for func46 which is address of memory
-![[Pasted image 20230220125302.png]]
+![img](images/Pasted%20image%2020230220125302.png)
 - Here is when we try to inspecting value on address `63984`
-![[Pasted image 20230220125310.png]]
+![img](images/Pasted%20image%2020230220125310.png)
 - Last part before creating the solver, we try to reconstruct the algorithm in python. Here is reconstructed algorithm in python
 ```python
 from Crypto.Util.number import *
@@ -267,5 +267,5 @@ cipher = AES.new(key, AES.MODE_CBC, iv)
 print(f"CT value : {result.hex()}")
 print(f"Flag : {cipher.decrypt(result)}")
 ```
- ![[Pasted image 20230220130944.png]]
+ ![img](images/Pasted%20image%2020230220130944.png)
 - Flag : `HackTM{bee3dc52aabec5c1b673d8d2beaeef64fbbf94fbbfe3f7ebcf716e465bd7af2a609a0be0717f6bcbed7c33dcfc95aadaae2f3e046a3b1ee42dbfb7da3687d77fbece4d957b48c3c3fa00d77da8aeffdedbe823bbc89678ded4bfe9f71fdcbf8c9cbd8b84ebffb118eb68b39bee0bfeccd07efbf8cd530b2dadbff4af}`
