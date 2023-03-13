@@ -3,6 +3,7 @@
 ## List CTF
 | Year     | CTF Name     |
 | -------- | ------------ |
+| 2023 | utctf |
 | 2023 | lactf |
 | 2023 | bi0sctf |
 | 2023 | irisctf |
