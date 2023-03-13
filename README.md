@@ -1,4 +1,4 @@
-# CTF Writeup Repository
+# CTF Writeup
 
 ## List CTF
 | Year     | CTF Name     |
