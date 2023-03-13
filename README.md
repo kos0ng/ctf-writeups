@@ -4,6 +4,9 @@
 | Year     | CTF Name     |
 | -------- | ------------ |
 | 2023 | utctf |
+| 2023 | nullcon (todo) |
+| 2023 | kalmar (todo) |
+| 2023 | acsc (todo) |
 | 2023 | lactf |
 | 2023 | bi0sctf |
 | 2023 | irisctf |
