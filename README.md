@@ -46,5 +46,5 @@
 | 2020 | zer0pts |
 | lifetime | cryptopals |
 
-## Another solver during CTF event
+## Undocumented Solver
 - [gist](http://gist.github.com/kos0ng)
