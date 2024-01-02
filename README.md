@@ -1,6 +1,6 @@
 
 ## Note
-- All my CTF writeup be written in [my gitbook](https://kos0ng.gitbook.io/ctfs/)
+- All my CTF writeup will be written in [my gitbook](https://kos0ng.gitbook.io/ctfs/)
 
 ## List CTF
 | Year     | CTF Name     |
