@@ -1,8 +1,19 @@
 
 ## Note
-- All my CTF writeup will be written in [my gitbook](https://kos0ng.gitbook.io/ctfs/)
+- You can see the detailed writeup at the following [link](https://blog.ryukk.dev/ctfs)
 
-## List CTF
+## My Challenge
+### Gemastik 2024
+| Name     | Category   | Tags | Difficulty | 
+| -------- | ---------- | ---- | ---------- |
+| 46_68x     | RE   | Flag Checker, VM, Modified Crypto Algorithm  | medium | 
+
+### Gemastik 2023
+| Name     | Category   | Tags | Difficulty | 
+| -------- | ---------- | ---- | ---------- |
+| FCaaS     | RE   | Flag Checker, Runtime ELF Generation  | easy-medium | 
+
+## Past CTF Solution
 | Year     | CTF Name     |
 | -------- | ------------ |
 | 2023 | utctf, nullcon (todo), kalmar (todo), acsc (todo), lactf, bi0sctf, irisctf |
@@ -11,5 +22,5 @@
 | 2020 | UIUCTF, AsisQuals, Defcon911, [FirstCTF](https://kos0ng.medium.com/write-up-first-challenge-2020-2e2ff284d590), Redpwn, Batpwn, [CastorsCTF](https://medium.com/@ret2ex/reverse-engineering-castors-ctf-2020-b80ce7a4670), [DeepCTF](https://kos0ng.medium.com/reverse-engineering-deep-ctf-2020-ac9e83aa266d), UNITYQualification, UTCTF, zer0pts |
 | Lifetime | cryptopals |
 
-## Another Solver
+## Unmanaged Solver
 - [gist](http://gist.github.com/kos0ng)
