@@ -6,12 +6,12 @@
 ### Gemastik 2024
 | Name     | Category   | Tags | Difficulty | 
 | -------- | ---------- | ---- | ---------- |
-| 46_68x     | RE   | Flag Checker, VM, Modified Crypto Algorithm  | medium | 
+| [46_68x](challenges/2024/gemastik/46_68x) | RE   | Flag Checker, VM, Modified Crypto Algorithm  | medium | 
 
 ### Gemastik 2023
 | Name     | Category   | Tags | Difficulty | 
 | -------- | ---------- | ---- | ---------- |
-| FCaaS     | RE   | Flag Checker, Runtime ELF Generation  | easy-medium | 
+| [FCaaS](challenges/2023/gemastik/FCaaS)   | RE   | Flag Checker, Runtime ELF Generation  | easy-medium | 
 
 ## Past CTF Solution
 | Year     | CTF Name     |
