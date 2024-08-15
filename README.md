@@ -23,4 +23,4 @@
 | Lifetime | cryptopals |
 
 ## Unmanaged Solver
-- [gist](http://gist.github.com/kos0ng)
+- [gist.github.com](http://gist.github.com/kos0ng)
